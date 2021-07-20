@@ -1,74 +1,56 @@
 /*
- * Author: Carlos Field-Sierra
- * Description: This acts as the server for the website
- * and sends back the text translated 
+    Name: Tony Tavera-Reyes
+    Assignment: PA 8
+    Discription: This is the server javascript file, which communicates with the
+    main js file and the server to be able to create changes to the HTML.
+    THis is reponsive and use a link to be able to be set live.
  */
-// Imports
+// required uses of modules for server to work
 const express = require("express")
-const readline = require('readline');
 const mongoose = require("mongoose");
-const fs = require("fs") // read file
 const parser = require("body-parser");
-
-// Instances
 const app = express()
 app.use(parser.json() );
-app.use(parser.urlencoded({ extended: true }));
 const port = 3000
+const hostname = "";
 const db = mongoose.connection;
-const mongoDBURL = 'mongodb://127.0.0.1/chatty';
+app.use(parser.urlencoded({ extended: true }));
 
-
-// Setup schema
+// server uses of mongo
+const mongoDBURL = 'mongodb://127.0.0.1/chatApp';
 var Schema = mongoose.Schema;
-var ChatMessageSchema = new Schema({
-  time: Number,
+var ChatMessageSchema = new Schema({time: Number,
   alias: String,
   message: String
 });
-var ChatMessage = mongoose.model('ChatMessage', ChatMessageSchema );
-
-
-
-
-// Set up mongoose connection
 mongoose.connect(mongoDBURL,{useNewUrlParser:true});
 db.on('error',console.error.bind(console,"MongoDB connection error"));
 
-// Server logic
-app.use(express.static("public_html")) // <--when ever a path matches a file in that folder send it 
-
-
-// Get request to /chats gets all messages from mongodb <-- client should get every 1 second
-app.get('/chats',(req,res)=>{
-    var ChatMessage = mongoose.model('ChatMessage', ChatMessageSchema );
-    ChatMessage.find({
-    }).exec(function(error,results){
-        res.send(JSON.stringify(results));
-    })
-})
-// Post /chats/post will have an alias and message 
-app.post('/chats/post', (req, res) => {
-    var ChatMessage = mongoose.model('ChatMessage', ChatMessageSchema );
-    const msg =  JSON.parse(req.body.message);
+function RunServer (){
     
-    var data =  new ChatMessage({
-        time:msg.time,
-        alias:msg.alias,
-        message:msg.message,
+    app.use(express.static("public_html")) 
+    // from file get the chats that have been formated
+    app.get('/chats',(req,res)=>{
+       
+        var ChatMessage = mongoose.model('ChatMessage', ChatMessageSchema );
+        ChatMessage.find({}).exec(function(error,results){
+            res.send(JSON.stringify(results))})
     })
     
-    data.save(function (err){
-        if (err){
-            console.log("error")
-        } 
-    })
+    app.post('/chats/post', (req, res) => {
+        var ChatMessage = mongoose.model('ChatMessage', ChatMessageSchema );
+        const data =  JSON.parse(req.body.data);
+        // saves the data and a dictionairy of the new messages
+        var saveTheData =  new ChatMessage({
+            alias:data.alias,
+            time:data.time,
+            message:data.message,
+        })
 
-});
-
-
-
-// Listen for port
-app.listen(port,()=>
-console.log(`Example app listening at http://localhost:${port}`)
-)
+        saveTheData.save((err)=>{})
+    });
+    app.listen(port,()=>
+    console.log("http://143.198.168.218:3000/")
+    )
+}
+RunServer();

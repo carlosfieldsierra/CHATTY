@@ -1,27 +1,45 @@
+<!-- 
+    Name: Tony Tavera-Reyes
+    Assignment: PA 8
+    Discription: This is the html page for the website.
+    There is two main section the messageBoard and the Bottom
+    section, the divs are spectifically set up so that in the
+    css the flex display will be managable and easy.
+    Here we have in this html input tags, label tags, and
+    text.
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script  src="app.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script  src="main.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatty</title>
+    <title>Chat App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
-    <div id="chatPage">
-        
-
+    <div id="messageBoard">
     </div>
-    <div  id="mesgPage">
-        <div id="aliasDiv">
-            <label for="alias">Alias</label>
-            <input type="text" id="alias" name="alias">
+    <div  id="Bottom">
+        <div id="firstNameDiv">
+            <div class='sectionA'>
+                <label for="firstName">Alias</label>
+            </div>
+            <div class='sectionB'>
+                <input type="text" id="firstName" name="firstName">
+            </div>   
         </div>
-        <div id="sendMesaageDiv">
-           <textarea id="textArea"></textarea>
-           <button id="btn">Send Message</button>
+        <div id="provideMessage">
+            <div class='sectionC'>
+                <label for="message">Message</label>
+            </div>
+            <div class='sectionD'>
+                <textarea id="inputText"></textarea>
+                <button id="clicker">Send Message</button>
+            </div>
         </div>
        
       

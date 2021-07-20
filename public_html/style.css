@@ -1,91 +1,97 @@
+/* 
+    Name: Tony Tavera-Reyes
+    Assignment: PA 8
+    Discription: This is the css for the Chat App Page.
+    This page is seperated into two main flex boxes, the
+    top message area has over 70% of the area for message
+    and floats auto to be able to be scrollable. Beyond that
+    the bottom flex box is split into four more flex boxes,
+    containing user input section and the send message button.
+*/
 html,
 body {
-  margin: 0;
-  padding: 0;
   max-width: 100%;
-  background-color: rgb(153, 99, 204);
-}
-
-body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-color: black;
 }
-#chatPage {
+#messageBoard {
   font-size: 20px;
+  flex: 9;
+  background-color: rgba(209, 250, 209, 255);
   padding: 20px;
   overflow: auto;
-  max-height: 50vh;
-  margin: 5px;
-  border-radius: 20px;
-  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  max-height: 500px;
   display: flex;
   flex-direction: column;
-  flex: 10;
-  background-color: aqua;
 }
 label {
-  box-shadow: rgba(240, 46, 170, 0.4) -5px 5px,
-    rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
-    rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(153, 99, 204);
-  border: 1px solid black;
-  border-radius: 10px;
+  font-weight: bolder;
+  background-color: black;
+  border: 1px solid rgba(125, 153, 166, 255);
   height: 50px;
-  width: 100px;
-  font-size: 20px;
-  margin: 10px;
+  width: 150px;
+  font-size: 30px;
+  align-self: center;
+  margin-left: 50px;
+  color: rgba(125, 153, 166, 255);
 }
-#alias {
-  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
-    rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px;
-  width: 200px;
-  height: 40px;
-  margin-right: 50px;
+#firstName {
+  width: 50%;
+  align-self: center;
+  font-size: 25px;
+  margin-left: 30px;
 }
-#aliasDiv {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-#sendMesaageDiv {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-#btn {
-  width: 200px;
-  height: 100px;
-  border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-}
-#textArea {
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  width: 400px;
-  height: 200px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-}
-#mesgPage {
-  border-radius: 100px;
-  margin: 10px;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+#firstNameDiv {
   display: flex;
   flex: 1;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+#provideMessage {
+  display: flex;
+  flex: 1;
+}
+#clicker {
+  width: 200px;
+  align-self: center;
+  font-size: 25px;
+  margin-left: 35px;
+  font-weight: bolder;
+}
+#inputText {
+  width: 50%;
+  align-self: center;
+  font-size: 25px;
+  margin-left: 30px;
+}
+#Bottom {
+  background-color: rgba(21, 50, 2, 255);
+  margin-top: 5px;
+  padding-top: 20px;
+  flex-direction: column;
+  display: flex;
+  flex: 1;
+}
+
+.sectionA {
+  display: flex;
+  flex: 1;
+}
+
+.sectionB {
+  display: flex;
+  flex: 5;
+}
+
+.sectionC {
+  display: flex;
+  flex: 1;
+}
+
+.sectionD {
+  display: flex;
+  flex: 5;
 }
