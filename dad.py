@@ -1,3 +1,12 @@
 
-def Main():
-    dad=0
+
+def resa():
+    class Dad:
+        def __init__(self):
+            pass
+def dans():
+    pass
+
+
+def sandnys():
+    pass
