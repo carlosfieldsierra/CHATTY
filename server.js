@@ -24,7 +24,8 @@ var ChatMessageSchema = new Schema({time: Number,
   alias: String,
   message: String
 });
-mongoose.connect(mongoDBURL,{useNewUrlParser:true});
+const x = 10;
+const y=10;
 db.on('error',console.error.bind(console,"MongoDB connection error"));
 
 
