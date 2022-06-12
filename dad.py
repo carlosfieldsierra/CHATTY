@@ -1,15 +1,15 @@
 
 
-def resa():
-    class Dad:
+def resadjdjdjdj():
+    class Ddkdjkdad:
         def __init__(self):
-            pass
+            re=10
 def dans():
-        pass
+        dksk=10
 
 
 def sandnys():
-    pass
+    dksks=10
 
 
 def sandnys():
