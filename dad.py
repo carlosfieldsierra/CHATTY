@@ -1,18 +1,7 @@
 
-
-def resadjdjdjdj():
-    class Ddkdjkdad:
-        def __init__(self):
-            re=10
-def dans():
-        dksk=10
+from xml.dom.minidom import parseString
 
 
-def sandnys():
-    dksks=10
-
-
-def sandnys():
-    pass
-
-x=0
+class Linked:
+    def __init__(self):
+        x=0
