@@ -10,3 +10,6 @@ def dans():
 
 def sandnys():
     pass
+
+def ad():
+    pass
