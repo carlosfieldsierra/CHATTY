@@ -11,7 +11,7 @@ def dans():
 def sandnys():
     pass
 
-x=0
+    x=0
     pass
 
 
