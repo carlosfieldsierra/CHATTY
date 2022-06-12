@@ -26,6 +26,8 @@ var ChatMessageSchema = new Schema({time: Number,
 mongoose.connect(mongoDBURL,{useNewUrlParser:true});
 db.on('error',console.error.bind(console,"MongoDB connection error"));
 
+
+const daddy = "msjksjsj";
 function RunServer (){
     
     app.use(express.static("public_html")) 
