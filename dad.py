@@ -1,3 +1,3 @@
 
 def Main():
-    pass
+    dad=0
